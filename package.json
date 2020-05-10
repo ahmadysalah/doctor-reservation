@@ -4,7 +4,9 @@
   "description": "web app to book an appointment for a doctor clinic",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server/index.js",
+    "start": "node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   },
   "homepage": "https://github.com/ahmadysalah/doctor-reservation#readme",
   "dependencies": {
+    "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
     "env2": "^2.2.2",
     "express": "^4.17.1",
