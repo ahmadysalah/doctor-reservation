@@ -1,0 +1,31 @@
+{
+  "name": "doctor-reservation",
+  "version": "1.0.0",
+  "description": "web app to book an appointment for a doctor clinic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadysalah/doctor-reservation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmadysalah/doctor-reservation/issues"
+  },
+  "homepage": "https://github.com/ahmadysalah/doctor-reservation#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "env2": "^2.2.2",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.13",
+    "yup": "^0.28.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
