@@ -9,6 +9,6 @@ const schema = yup.object().shape({
   birthDate: yup.date(),
 });
 
-const postDoctorsValidation = (doctor) => schema.isValid(doctor);
+const DoctorsValidation = (doctor) => schema.isValid(doctor);
 
-module.exports = postDoctorsValidation;
+module.exports = DoctorsValidation;
