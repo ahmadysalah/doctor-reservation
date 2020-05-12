@@ -1,0 +1,26 @@
+.header {
+    width: 84%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 2rem;
+    align-items: center;
+    background-color: transparent;
+}
+
+.navbar li {
+    display: inline;
+    padding-left: 2rem;
+    font-size: 14px;
+}
+
+.link {
+    text-decoration: none;
+    color: #242429;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.navbar li :hover {
+    text-decoration: underline;
+}
