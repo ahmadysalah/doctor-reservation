@@ -9,7 +9,7 @@ const getAllDoctors = async (req, res) => {
       doctorsData,
     });
   } catch (e) {
-    res.status(400).json({ message: 'Failed' });
+    res.status(400).json({ message: 'Failed get doctors' });
   }
 };
 
