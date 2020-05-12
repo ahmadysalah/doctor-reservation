@@ -31,7 +31,7 @@ const doctorsSchema = new Schema({
   },
   birthDate: {
     type: Date,
-    required: true,
+    required: false,
     trim: true,
   },
 
