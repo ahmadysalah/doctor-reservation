@@ -1,0 +1,14 @@
+.textField {
+    width: 25rem;
+    margin: .5rem;
+}
+
+.selectBox {
+    width: 25rem;
+    margin: .5rem;
+}
+
+.datePicker {
+    width: 25rem;
+    margin: .5rem;
+}
