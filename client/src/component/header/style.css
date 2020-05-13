@@ -2,7 +2,8 @@
     width: 84%;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    position: absolute;
+    left: 8%;
     margin-top: 2rem;
     align-items: center;
     background-color: transparent;
