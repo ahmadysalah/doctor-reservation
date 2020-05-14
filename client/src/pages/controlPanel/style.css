@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+}
+
+.control {
+    /* min-height: 120vh;
+    margin-bottom: 5rem; */
+}
+
+.footer__logo {}
+
+.cp__link {
+    color: white;
+}
+
+.ant-menu-item a {
+    color: rgb(155, 161, 170)
+}
+
+.ant-menu-item a:hover {
+    color: white
+}
