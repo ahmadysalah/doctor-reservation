@@ -5,10 +5,11 @@ import Header from '../header';
 import HomPage from '../../pages/home';
 import Doctors from '../../pages/doctors';
 import Reservation from '../../pages/reservation';
+import history from '../../history';
 
 function App() {
   return (
-    <Router>
+    <Router history={history}>
       <div>
         <Header />
       </div>

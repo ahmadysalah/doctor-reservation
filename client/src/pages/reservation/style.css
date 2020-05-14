@@ -1,3 +1,63 @@
 .appointment {
     min-height: 100vh;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10rem 10rem 10rem 10rem;
+}
+
+.appointment__img {
+    width: 25rem;
+}
+
+.book__btn {
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    width: 8rem;
+    height: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+    background-color: #0772FA;
+    margin: 2rem;
+}
+
+.book__btn:hover {
+    background-color: #F1F9FE;
+    color: #0772FA;
+}
+
+.book__reset {
+    text-align: center;
+    font-size: 16px;
+    color: #0772FA;
+    width: 8rem;
+    height: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+    background-color: #fff;
+    margin-left: 2rem;
+}
+
+.book__reset:hover {
+    background-color: #0772FA;
+    color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    .appointment {
+        margin-left: 5rem;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+    }
 }

@@ -4,9 +4,10 @@ import { UserOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
 import './style.css';
 
-const InputField = ({ placeholder, className, value, prefix }) => (
+const InputField = ({ onChange, placeholder, className, value, prefix }) => (
   <>
     <Input
+      onChange={onChange}
       size="large"
       className={className}
       value={value}
@@ -21,6 +22,7 @@ InputField.propTypes = {
   className: PropTypes.string,
   value: PropTypes.string.isRequired,
   prefix: PropTypes.string,
+  onChange: PropTypes.string.isRequired,
 };
 InputField.defaultProps = {
   placeholder: 'large size',

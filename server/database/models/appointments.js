@@ -25,7 +25,7 @@ const appointmentsSchema = new Schema({
   },
   patientBirthDate: {
     type: Date,
-    required: true,
+    required: false,
     trim: true,
   },
   patientAddress: {
