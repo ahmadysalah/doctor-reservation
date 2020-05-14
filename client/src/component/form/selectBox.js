@@ -5,9 +5,10 @@ import { Select } from 'antd';
 import PropTypes from 'prop-types';
 
 const { Option } = Select;
-const selectData = ({ items, setValue, placeholder, className }) => (
+const selectData = ({ items, setValue, placeholder, className, value }) => (
   <div>
     <Select
+      value={value}
       showSearch
       size="large"
       className={className}
@@ -32,11 +33,13 @@ selectData.propTypes = {
   setValue: PropTypes.func,
   placeholder: PropTypes.string,
   className: PropTypes.string,
+  value: PropTypes.string,
 };
 selectData.defaultProps = {
   items: [],
   setValue: () => {},
   placeholder: '',
   className: 'selectBox',
+  value: '',
 };
 export default selectData;
