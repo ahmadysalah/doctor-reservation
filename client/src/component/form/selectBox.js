@@ -8,11 +8,11 @@ const { Option } = Select;
 const selectData = ({ items, setValue, placeholder, className, value }) => (
   <div>
     <Select
-      value={value}
       showSearch
       size="large"
       className={className}
       placeholder={placeholder}
+      value={value}
       optionFilterProp="children"
       onChange={(value) => setValue(value)}
       filterOption={(input, option) =>
@@ -33,13 +33,12 @@ selectData.propTypes = {
   setValue: PropTypes.func,
   placeholder: PropTypes.string,
   className: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.string.isRequired,
 };
 selectData.defaultProps = {
   items: [],
   setValue: () => {},
   placeholder: '',
   className: 'selectBox',
-  value: '',
 };
 export default selectData;
