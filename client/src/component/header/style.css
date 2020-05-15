@@ -25,3 +25,8 @@
 .navbar li :hover {
     text-decoration: underline;
 }
+
+.avatar {
+    width: 2rem;
+    border-radius: 50%;
+}

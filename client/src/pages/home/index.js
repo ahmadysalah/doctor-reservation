@@ -4,7 +4,6 @@ import { PhoneFilled } from '@ant-design/icons';
 import resImg from '../../assets/img/banner_img.png';
 import 'typeface-playfair-display';
 import './style.css';
-import Footer from '../../component/footer';
 
 const HomePage = () => (
   <>
@@ -28,7 +27,6 @@ const HomePage = () => (
         <img className="reservation__img" src={resImg} alt="banner" />
       </div>
     </div>
-    <Footer />
   </>
 );
 
