@@ -1,80 +1,72 @@
-import React, { useState } from 'react';
-import { Layout, Menu } from 'antd';
-import {
-  DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
-import { Link } from 'react-router-dom';
-import Reservation from './allReservation';
-import imgLogo from '../../assets/img/logo.png';
+import React, { useState, useEffect } from 'react';
 import './style.css';
+import { LoadingOutlined } from '@ant-design/icons';
+import { GoogleLogin } from 'react-google-login';
+import axios from 'axios';
+import { Alert } from 'antd';
+import ControlPanel from './layout';
+import imgLogo from '../../assets/img/logo.png';
 
-const { Header, Content, Sider, Footer } = Layout;
-const { SubMenu } = Menu;
+const ControlPanelLayout = () => {
+  const [user, setUser] = useState({ admin: false });
+  const [waite, setWait] = useState(true);
 
-const ControlPanel = () => {
-  const [collapsed, setCollapsed] = useState(false);
-  const [key, setKey] = useState('1');
-  const onCollapse = (collapsed) => {
-    setCollapsed(collapsed);
+  const successResponse = (response) => {
+    const { tokenId } = response;
+    axios
+      .post('/api/v1/login/google', { tokenId })
+      .then(({ data }) => setUser(data))
+      .catch();
   };
 
+  const failureResponse = (response) => {
+    setUser({ admin: false });
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setWait(false);
+    }, 2000);
+  });
   return (
-    <div className="control">
-      <Layout style={{ minHeight: '100vh' }}>
-        <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-          <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <Menu.Item
-              key="1"
-              onClick={() => setKey('1')}
-              icon={<PieChartOutlined />}
-            >
-              Reservation{' '}
-            </Menu.Item>
-            <Menu.Item
-              key="2"
-              onClick={() => setKey('2')}
-              icon={<DesktopOutlined />}
-            >
-              Add Doctor{' '}
-            </Menu.Item>
-            <SubMenu key="sub1" icon={<UserOutlined />} title="Doctors">
-              <Menu.Item key="3">Tom</Menu.Item>
-              <Menu.Item key="4">Bill</Menu.Item>
-              <Menu.Item key="5">Alex</Menu.Item>
-            </SubMenu>
-            <SubMenu key="sub2" icon={<TeamOutlined />} title="Clinic">
-              <Menu.Item key="6">Team 1</Menu.Item>
-              <Menu.Item key="8">Team 2</Menu.Item>
-            </SubMenu>
-            <Menu.Item key="9" icon={<FileOutlined />}>
-              <Link to="/" className="cp__link">
-                Preview
-              </Link>
-            </Menu.Item>
-          </Menu>
-        </Sider>
-        <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }} />
-          <Content style={{ margin: '0 16px' }}>
-            <div
-              className="site-layout-background"
-              style={{ padding: 24, minHeight: 360 }}
-            >
-              {key === '1' && <Reservation />}
-              {key === '2' && <p> 2</p>}
+    <>
+      {!user ||
+        (!user.admin && (
+          <div className="login_container">
+            <div className="login">
+              <img src={imgLogo} alt="logo" className="footer__logo" />
+              <h2 className="login_header"> Sign In By google</h2>
+              <div className="spin__container">
+                {waite && (
+                  <LoadingOutlined
+                    style={{ fontSize: 50 }}
+                    spin
+                    className="spin"
+                  />
+                )}
+                {!waite && user && !user.admin && (
+                  <Alert
+                    message="Warning"
+                    description="You are not authorize"
+                    type="warning"
+                    showIcon
+                  />
+                )}
+              </div>
+              <GoogleLogin
+                clientId="648259922813-6ifn05k568h6p6fq0qvv8b1bvbj04472.apps.googleusercontent.com"
+                onSuccess={successResponse}
+                onFailure={failureResponse}
+                cookiePolicy="single_host_origin"
+                isSignedIn
+                className="google__btn"
+                disabled={waite}
+              />
             </div>
-          </Content>
-          <Footer style={{ textAlign: 'right' }}>
-            <img src={imgLogo} alt="logo" className="footer__logo" />
-          </Footer>
-        </Layout>
-      </Layout>
-    </div>
+          </div>
+        ))}
+      {user && user.admin && <ControlPanel user={user} />}
+    </>
   );
 };
-export default ControlPanel;
+export default ControlPanelLayout;

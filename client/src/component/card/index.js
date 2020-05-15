@@ -13,10 +13,9 @@ class CardContainer extends React.Component {
   componentDidMount = async () => {
     try {
       const data = await axios.get('/api/v1/doctors');
-      console.log(data);
       this.setState(data);
     } catch (e) {
-      console.log('eror');
+      this.setState({ data: 'No Data' });
     }
   };
 

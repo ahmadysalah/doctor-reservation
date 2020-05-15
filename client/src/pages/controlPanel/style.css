@@ -2,12 +2,12 @@
     margin: 0;
 }
 
-.control {
-    /* min-height: 120vh;
-    margin-bottom: 5rem; */
+.login_container {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(82, 79, 79);
 }
-
-.footer__logo {}
 
 .cp__link {
     color: white;
@@ -19,4 +19,67 @@
 
 .ant-menu-item a:hover {
     color: white
+}
+
+.cp__header {
+    align-self: stretch;
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.spin {
+    width: 100%;
+}
+
+.spin__container {
+    height: 5rem;
+}
+
+.login {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+    height: 23rem;
+    width: 25rem;
+    border: 1px solid rgb(201, 197, 197);
+    box-shadow: .3px 1px #888888;
+}
+
+.google__btn {
+    border: 1px solid black;
+    width: 20rem;
+}
+
+.spin {
+    height: 2rem
+}
+
+.cp__p {
+    width: 50%;
+    align-self: stretch;
+    text-align: right;
+    color: white;
+}
+
+.cp__container__header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    padding: 0,
+}
+
+@media only screen and (max-width: 600px) {
+    .cp__container__header {
+        font-size: 50%;
+    }
 }
