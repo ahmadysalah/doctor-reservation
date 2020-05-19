@@ -22,7 +22,7 @@ const adminsSchema = new Schema({
   },
   password: {
     type: String,
-    required: true,
+    required: false,
     trim: true,
   },
   avatar: {
