@@ -4,9 +4,14 @@
   "description": "web app to book an appointment for a doctor clinic",
   "main": "index.js",
   "scripts": {
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server/index.js",
-    "start": "NODE_ENV=production node server/index.js"
+    "start": "NODE_ENV=production node server/index.js",
+    "build:database:pro": "NODE_ENV=production node server/database/utils/createCollection.js",
+    "build:database:dev": "NODE_ENV=developer node server/database/utils/createCollection.js"
   },
   "repository": {
     "type": "git",

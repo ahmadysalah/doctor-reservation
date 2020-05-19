@@ -12,6 +12,14 @@ router.use('/appointments', appointments);
 router.use('/news', covid);
 router.post('/login/google', googleLogin);
 
+
+router.use((req, res) => {
+  res.status(404).json({
+    status: 404,
+    message: 'Bad request',
+  });
+});
+
 router.use((error, req, res, next) => {
   res.status(500).json({
     status: 500,
