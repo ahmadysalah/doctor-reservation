@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from '../header';
 import HomPage from '../../pages/home';
 import Doctors from '../../pages/doctors';
+import AboutUs from '../../pages/about';
 import Reservation from '../../pages/reservation';
 import ControlPanel from '../../pages/controlPanel';
 import Footer from '../footer';
@@ -25,6 +26,11 @@ function App() {
         <Route path="/reservation">
           <Header />
           <Reservation />
+          <Footer />
+        </Route>
+        <Route path="/about">
+          <Header />
+          <AboutUs />
           <Footer />
         </Route>
         <Route exact path="/CP">
