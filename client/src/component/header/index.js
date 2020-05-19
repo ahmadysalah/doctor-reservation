@@ -32,7 +32,7 @@ const Header = () => (
           </Link>
         </li>
         <li>
-          <Link to="/Covid" className="link">
+          <Link to="/covid" className="link">
             Covid-19
           </Link>
         </li>

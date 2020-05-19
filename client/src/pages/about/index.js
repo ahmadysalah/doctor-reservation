@@ -5,7 +5,7 @@ import Emergency from '../../assets/img/emergency.svg';
 import Appointment from '../../assets/img/appointment.svg';
 import Qualfied from '../../assets/img/qualified.svg';
 
-const Doctors = () => (
+const AboutUs = () => (
   <div className="about__us">
     <div className="about__left">
       <img src={aboutUsIMg} alt="about-us" />
@@ -35,4 +35,4 @@ const Doctors = () => (
     </div>
   </div>
 );
-export default Doctors;
+export default AboutUs;

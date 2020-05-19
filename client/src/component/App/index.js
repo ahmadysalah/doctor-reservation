@@ -7,6 +7,7 @@ import Doctors from '../../pages/doctors';
 import AboutUs from '../../pages/about';
 import Reservation from '../../pages/reservation';
 import ControlPanel from '../../pages/controlPanel';
+import CovidNews from '../../pages/covid';
 import Footer from '../footer';
 
 function App() {
@@ -33,8 +34,16 @@ function App() {
           <AboutUs />
           <Footer />
         </Route>
+        <Route exact path="/covid">
+          <Header />
+          <CovidNews />
+          <Footer />
+        </Route>
         <Route exact path="/CP">
           <ControlPanel />
+        </Route>
+        <Route path="/*">
+          <h1>404</h1>
         </Route>
       </Switch>
     </Router>
