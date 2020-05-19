@@ -1,6 +1,7 @@
 const express = require('express');
 
 const app = express();
+const { join } = require('path');
 const compression = require('compression');
 const database = require('./database/connection');
 const router = require('./routes');
@@ -21,11 +22,10 @@ database
 
 app.use('/api/v1', router);
 
-app.use('*', (req, res) => {
-  res.status(404).json({
-    status: 404,
-    message: 'bad request',
-  });
+app.use(express.static(join(__dirname, '..', 'client', 'build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'));
 });
 
 module.exports = app;

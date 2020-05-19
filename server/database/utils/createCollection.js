@@ -20,5 +20,5 @@ const createEmptyCollection = async () => {
     throw err;
   }
 };
-
+createEmptyCollection();
 module.exports = createEmptyCollection;
