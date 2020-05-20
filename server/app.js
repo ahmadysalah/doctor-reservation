@@ -15,6 +15,7 @@ app.use([
   express.urlencoded({ extended: false }),
 ]);
 
+// connect to mangoDB
 database
   // eslint-disable-next-line no-console
   .on('open', () => console.log('database is connected'))

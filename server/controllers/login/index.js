@@ -2,7 +2,9 @@ const axios = require('axios');
 const { OAuth2Client } = require('google-auth-library');
 const admins = require('../../database/models/admin');
 
-
+// google oath function by search on the email coming
+// from google by the email inside the database and
+// send back the user is admin if it exist and user if not.
 const { CLIENT_ID } = process.env;
 const client = new OAuth2Client(CLIENT_ID);
 
@@ -18,6 +20,7 @@ const googleLogin = async (req, res, next) => {
     // If request specified a G Suite domain:
     // const domain = payload['hd'];
   };
+  // this verfy if you dont come from the web by keys
   verify().catch(console.error);
 
   // request user details:
