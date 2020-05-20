@@ -1,7 +1,3 @@
----
-title: 'CLINIC APP'
----
-
 CLINIC APP 
 ===
 ![downloads](https://img.shields.io/github/downloads/atom/atom/total.svg)
@@ -10,12 +6,6 @@ CLINIC APP
  [Visit the Site from here !](https://clinic-online.herokuapp.com/)
  
 ![](https://i.imgur.com/qiAjVwz.png)
-
-
-## Table of Contents
-
-[TOC]
-
 
 ## How use this app as a developer
 
@@ -42,15 +32,8 @@ User story
 
 User flows
 ---
-```sequence
-patient->clinic: Appointment Booking 
-clinic-->DB:get all clinics
-clinic-->patient: choose your Clinic!
-clinic-->DB:get all doctors for clinic
-clinic-->patient: choose your Doctor!
-patient->clinic: choose date and time?
-clinic-->DB:save on the database
-```
+![](https://i.imgur.com/yFSHLTV.png)
+
 
 Database schema
 ---
