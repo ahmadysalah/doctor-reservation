@@ -11,7 +11,6 @@ const logic = {
   },
 
   deleteReserve: async (id) => {
-    console.log(id);
     try {
       const { data } = await axios.delete(`/api/v1/appointments/${id}`);
       return data.message;

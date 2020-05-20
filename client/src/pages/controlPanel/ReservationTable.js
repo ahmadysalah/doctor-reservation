@@ -4,7 +4,7 @@ import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
 import logic from './logic';
 
-const { allReservation, deleteReserve } = logic;
+const { deleteReserve } = logic;
 const key = 'updatable';
 
 class ReservationTable extends React.Component {
@@ -14,14 +14,17 @@ class ReservationTable extends React.Component {
     data: '',
   };
 
-  componentDidMount = () =>
-    allReservation().then((data) => this.setState({ data }));
+  componentDidMount = () => {
+    const { getData } = this.props;
+    getData().then((data) => this.setState({ data }));
+  };
 
   openMessage = (msg) => {
+    const { getData } = this.props;
     message.loading({ content: 'Loading...', key });
     setTimeout(() => {
       message.success({ content: msg, key, duration: 2 });
-      allReservation().then((data) => this.setState({ data }));
+      getData().then((data) => this.setState({ data }));
     }, 1000);
   };
 

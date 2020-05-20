@@ -4,7 +4,7 @@ import { Card } from 'antd';
 import axios from 'axios';
 
 const { Meta } = Card;
-
+// make a card class as it in ant design
 class CardContainer extends React.Component {
   state = {
     data: '',

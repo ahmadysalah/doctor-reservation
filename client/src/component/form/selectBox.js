@@ -33,7 +33,6 @@ selectData.propTypes = {
   setValue: PropTypes.func,
   placeholder: PropTypes.string,
   className: PropTypes.string,
-  value: PropTypes.string.isRequired,
 };
 selectData.defaultProps = {
   items: [],

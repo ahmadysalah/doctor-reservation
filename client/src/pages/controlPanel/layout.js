@@ -8,10 +8,12 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
-import Reservation from './allReservation';
+import Reservation from './ReservationTable';
 import imgLogo from '../../assets/img/logo.png';
 import './style.css';
+import logic from './logic';
 
+const { allReservation } = logic;
 const { Header, Content, Sider, Footer } = Layout;
 const { SubMenu } = Menu;
 
@@ -22,6 +24,7 @@ const ControlPanel = ({ user: { picture, name } }) => {
     setCollapsed(collapsed);
   };
 
+  // control panel layout full screen as it in ant design
   return (
     <div className="control">
       <Layout style={{ minHeight: '100vh' }}>
@@ -76,7 +79,7 @@ const ControlPanel = ({ user: { picture, name } }) => {
               style={{ padding: 24, minHeight: 360 }}
             >
               {key === '1' && <h3> Statics</h3>}
-              {key === '2' && <Reservation />}
+              {key === '2' && <Reservation getData={() => allReservation()} />}
             </div>
           </Content>
           <Footer style={{ textAlign: 'right' }}>
