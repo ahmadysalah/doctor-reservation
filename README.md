@@ -44,18 +44,18 @@ Database schema
 Used Technology
 ---
 MERN technology used :100: 
-1- Node Js
-2- Express
-3- React
-4- MongoDB
-5- API
+1. Node Js
+2. Express
+3. React
+4. MongoDB
+5. API
 
 Used Features
 ---
-1- back end
-2- front end
-3- control Panel
-4- covid-19 articles from API
+1. back end
+2. front end
+3. control Panel
+4. covid-19 articles from API
 
 Stretch goals
 ---
