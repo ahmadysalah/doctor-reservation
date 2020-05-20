@@ -20,13 +20,14 @@ const InputField = ({ onChange, placeholder, className, value, prefix }) => (
 InputField.propTypes = {
   placeholder: PropTypes.string,
   className: PropTypes.string,
-  value: PropTypes.string.isRequired,
-  prefix: PropTypes.string,
-  onChange: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  prefix: PropTypes.bool,
+  onChange: PropTypes.func.isRequired,
 };
 InputField.defaultProps = {
   placeholder: 'large size',
   className: 'textField',
+  value: '',
   prefix: '',
 };
 export default InputField;
