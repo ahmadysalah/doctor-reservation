@@ -9,7 +9,15 @@ const logic = {
       return 'No Data';
     }
   },
-
+  allDoctors: async () => {
+    try {
+      return (await axios.get(`/api/v1/doctors`)).data.map(
+        ({ fullName }) => fullName
+      );
+    } catch (e) {
+      return 'No Data';
+    }
+  },
   deleteReserve: async (id) => {
     try {
       const { data } = await axios.delete(`/api/v1/appointments/${id}`);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout, Menu } from 'antd';
 import {
   DesktopOutlined,
@@ -12,17 +12,25 @@ import Reservation from './ReservationTable';
 import imgLogo from '../../assets/img/logo.png';
 import './style.css';
 import logic from './logic';
+import json from '../reservation/clinicData.json';
 
-const { allReservation } = logic;
+const { allReservation, allDoctors } = logic;
 const { Header, Content, Sider, Footer } = Layout;
 const { SubMenu } = Menu;
 
 const ControlPanel = ({ user: { picture, name } }) => {
   const [collapsed, setCollapsed] = useState(false);
+  const [doctors, setDoctors] = useState();
   const [key, setKey] = useState('1');
   const onCollapse = (collapsed) => {
     setCollapsed(collapsed);
   };
+
+  useEffect(() => {
+    if (!doctors) {
+      allDoctors().then(setDoctors);
+    }
+  }, [doctors]);
 
   // control panel layout full screen as it in ant design
   return (
@@ -52,13 +60,15 @@ const ControlPanel = ({ user: { picture, name } }) => {
               Reservation
             </Menu.Item>
             <SubMenu key="sub1" icon={<UserOutlined />} title="Doctors">
-              <Menu.Item key="3">Tom</Menu.Item>
-              <Menu.Item key="4">Bill</Menu.Item>
-              <Menu.Item key="5">Alex</Menu.Item>
+              {doctors &&
+                doctors.map((doctorName) => (
+                  <Menu.Item key={doctorName}>{doctorName}</Menu.Item>
+                ))}
             </SubMenu>
             <SubMenu key="sub2" icon={<TeamOutlined />} title="Clinic">
-              <Menu.Item key="6">Team 1</Menu.Item>
-              <Menu.Item key="8">Team 2</Menu.Item>
+              {json.clinics.map((clinic) => (
+                <Menu.Item key={clinic}>{clinic}</Menu.Item>
+              ))}
             </SubMenu>
             <Menu.Item key="9" icon={<FileOutlined />}>
               <Link to="/" className="cp__link">

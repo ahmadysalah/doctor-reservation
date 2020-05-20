@@ -19,7 +19,6 @@ const logic = {
     appointmentDate,
     appointmentTime
   ) => {
-    console.log(appointmentDate);
     try {
       const { data } = await axios.post('/api/v1/appointments/postAppoint', {
         patientName,

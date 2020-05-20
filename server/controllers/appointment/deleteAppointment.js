@@ -1,5 +1,6 @@
 const appointments = require('../../database/models/appointments');
 
+// delete appointment by id:
 const deleteAppoint = async (req, res) => {
   const { id } = req.params;
   try {

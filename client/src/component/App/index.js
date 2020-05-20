@@ -8,6 +8,8 @@ import Reservation from '../../pages/reservation';
 import ControlPanel from '../../pages/controlPanel';
 import CovidNews from '../../pages/covid';
 import Footer from '../footer';
+import Error404 from '../../pages/error';
+
 import './App.css';
 
 function App() {
@@ -46,7 +48,7 @@ function App() {
           <ControlPanel />
         </Route>
         <Route path="/*">
-          <h1>404</h1>
+          <Error404 />
         </Route>
       </Switch>
     </Router>

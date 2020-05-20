@@ -1,5 +1,6 @@
 const doctors = require('../../database/models/doctors');
 
+// delete doctor by id :
 const deleteDoctor = async (req, res) => {
   const { id } = req.params;
   try {

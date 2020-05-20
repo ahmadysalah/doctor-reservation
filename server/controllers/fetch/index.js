@@ -1,6 +1,7 @@
 const axios = require('axios');
 require('env2')('config.env');
 
+// fetch news by outside api by url, and the api-key inside the env file.
 const fetchData = {
   covid: async (req, res) => {
     const URL = `http://newsapi.org/v2/everything?q=covid-19&apiKey=${process.env.API_KEY}`;
