@@ -7,6 +7,10 @@ CLINIC APP
  
 ![](https://i.imgur.com/qiAjVwz.png)
 
+## Summary :
+#### the clinic app is a website app created to help people to book an appointment in aclinic online, so any clinic can use this app to organize the reservation time, besides that the client can choose the doctors and clinic and peck the date and time.
+---
+
 ## How use this app as a developer
 
 1. git clone the repo
