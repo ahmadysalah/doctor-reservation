@@ -8,7 +8,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.2.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "eslint-config-prettier": "^6.11.0",
     "history": "^4.10.1",
     "prop-types": "^15.7.2",
